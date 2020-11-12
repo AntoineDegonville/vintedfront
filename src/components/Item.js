@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Offer from "./containers/Offer";
 
 const Item = ({ data, setData }) => {
-  const [itemId, setItemId] = useState("");
   return (
     <div className="container_item">
       {data.offers.map((item, index) => {
@@ -22,7 +20,7 @@ const Item = ({ data, setData }) => {
               </div>
 
               <div>
-                <Link>
+                <Link to={`/offer/${item._id}`}>
                   <img
                     className="picture_item"
                     src={item.product_pictures[0].secure_url}
