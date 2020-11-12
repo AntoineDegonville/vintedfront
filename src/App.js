@@ -12,6 +12,17 @@ import Cookies from "js-cookie";
 function App() {
   const [data, setData] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
+  const [token, setToken] = useState(Cookies.get("usertoken") || null);
+
+  const setUser = (tokenToSet) => {
+    if (tokenToSet) {
+      Cookies.set("usertoken", tokenToSet);
+      setToken(tokenToSet);
+    } else {
+      Cookies.remove("usertoken");
+      setToken(null);
+    }
+  };
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -31,13 +42,13 @@ function App() {
     <>
       <div>
         <Router>
-          <Header></Header>
+          <Header token={token} setUser={setUser}></Header>
           <Switch>
             <Route path="/signup">
-              <Signup></Signup>
+              <Signup setUser={setUser}></Signup>
             </Route>
             <Route path="/login">
-              <Signup></Signup>
+              <Login setUser={setUser}></Login>
             </Route>
             <Route path="/offer/:id">
               <Offer></Offer>
