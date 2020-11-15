@@ -28,8 +28,10 @@ const Item = ({ data, setData }) => {
                   />
                 </Link>
               </div>
-              <div>
-                <span>{item.product_price}</span>
+              <div className="item_description">
+                <span style={{ paddingBottom: 20, fontWeight: "bold" }}>
+                  {item.product_price}€
+                </span>
                 <span>
                   {item.product_details.map((item, index) => {
                     return (

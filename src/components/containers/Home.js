@@ -28,9 +28,11 @@ const Home = () => {
           <h2>Prêts à faire du tri dans vos placards ?</h2>
           <button>Commencez à vendre</button>
         </div>
+        <div className="hero_bottom_img"></div>
       </div>
-      <Link to={"/offer"}>Go Offer</Link>
-      <Item data={data} setData={setData}></Item>
+      <div className="item_section">
+        <Item data={data} setData={setData}></Item>
+      </div>
     </>
   );
 };

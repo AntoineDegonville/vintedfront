@@ -8,6 +8,9 @@ import Login from "./components/containers/Login";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faKey, faSearch } from "@fortawesome/free-solid-svg-icons";
+library.add(faEnvelope, faKey, faSearch);
 
 function App() {
   const [data, setData] = useState([{}]);
