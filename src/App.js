@@ -5,12 +5,18 @@ import Offer from "./components/containers/Offer";
 import Header from "./components/Header";
 import Signup from "./components/containers/Signup";
 import Login from "./components/containers/Login";
+import LoaderSpinner from "./components/LoaderSpinner";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope, faKey, faSearch } from "@fortawesome/free-solid-svg-icons";
-library.add(faEnvelope, faKey, faSearch);
+import {
+  faEnvelope,
+  faKey,
+  faSearch,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faEnvelope, faKey, faSearch, faTimes);
 
 function App() {
   const [data, setData] = useState([{}]);
@@ -40,7 +46,9 @@ function App() {
   }, []);
 
   return isLoading ? (
-    <span>En cours de chargement... </span>
+    <div className="loader">
+      <LoaderSpinner></LoaderSpinner>
+    </div>
   ) : (
     <>
       <div>

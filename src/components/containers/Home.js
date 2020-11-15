@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Item from "../Item";
+import LoaderSpinner from "../LoaderSpinner";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -20,7 +20,9 @@ const Home = () => {
   }, []);
 
   return isLoading ? (
-    <span>En cours de chargement... </span>
+    <div className="loader">
+      <LoaderSpinner></LoaderSpinner>
+    </div>
   ) : (
     <>
       <div className="hero">

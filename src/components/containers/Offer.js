@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import LoaderSpinner from "../LoaderSpinner";
+import { Carousel } from "react-responsive-carousel";
 
 const Offer = () => {
   const { id } = useParams();
@@ -25,32 +27,46 @@ const Offer = () => {
   }, [id]);
 
   return isLoading ? (
-    <p>En cours de chargement</p>
+    <div className="loader">
+      <LoaderSpinner></LoaderSpinner>
+    </div>
   ) : (
     <>
-      <div>
-        <div>
-          <img src={data.product_image.secure_url} alt="" />
-        </div>
-        <p>{data.product_price}</p>
-        {data.product_details.map((item, index) => {
-          const keys = Object.keys(item);
-          return (
-            <div>
-              {keys[0]}
-              {item[keys[0]]}
+      -
+      <div className="background">
+        <div className="offer_container">
+          <div className="offer_picture">
+            <img src={data.product_image.secure_url} alt="" />
+          </div>
+          <div className="offer_data">
+            <div className="offer_description">
+              <p className="offer_price">{data.product_price}€</p>
+              {data.product_details.map((item, index) => {
+                const keys = Object.keys(item);
+                return (
+                  <div className="offer_details_name">
+                    {keys[0]}
+                    <div className="offer_details_value">{item[keys[0]]}</div>
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
-        <div>
-          <p>{data.product_name}</p>
-          <p>{data.product_description}</p>
-          <p>
-            <span>
-              <img src={data.owner.account.avatar.secure_url} alt="" />
-            </span>{" "}
-            {data.owner.account.username}
-          </p>
+
+            <div className="offer_tag">
+              <h5 style={{ color: "black", fontSize: 16, fontWeight: "bold" }}>
+                {data.product_name}
+              </h5>
+              <p>{data.product_description}</p>
+              <div className="offer_owner">
+                <img
+                  className="offer_avatar"
+                  src={data.owner.account.avatar.secure_url}
+                  alt=""
+                />
+                <span>{data.owner.account.username}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

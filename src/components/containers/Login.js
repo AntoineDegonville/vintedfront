@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import Modal from "../Modal";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const history = useHistory();
+  const [username, setUsername] = useState("");
+  const [hidden, setHidden] = useState(false);
+  const [animation, setAnimation] = useState(false);
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -16,17 +21,27 @@ const Login = ({ setUser }) => {
           password: password,
         }
       );
-      console.log(response.data);
       const token = response.data.token;
-      console.log(token);
       setUser(token);
-      history.push("/home");
+      setUsername(response.data.account.username);
     } catch (error) {
       console.log(error.message);
     }
   };
+
   return (
     <>
+      {/* MODAL */}
+      <div
+        style={{
+          visibility: hidden ? "visible" : "hidden",
+          animationName: animation ? "pop" : "none",
+        }}
+        className="modal"
+      >
+        <Modal username={username} setHidden={setHidden}></Modal>
+      </div>
+      {/* ////////////////////////////////////////////////////////////// */}
       <div className="loginsignup_container">
         <h2>Se Connecter</h2>
         <form onSubmit={handleSubmit}>
@@ -38,19 +53,27 @@ const Login = ({ setUser }) => {
             type="email"
             value={email}
           />
-          <div>
-            <input
-              placeholder="Mot de passe"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              type="password"
-              value={password}
-            />
-            <button type="submit">Connection</button>
-          </div>
 
-          <p>Pas encore de compte ? Inscris-toi !</p>
+          <input
+            placeholder="Mot de passe"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            type="password"
+            value={password}
+          />
+          <button
+            onClick={() => {
+              setHidden(true);
+              setAnimation(true);
+            }}
+            type="submit"
+          >
+            Connection
+          </button>
+          <Link style={{ textDecoration: "none" }} to="/signup">
+            <p>Pas encore de compte ? Inscris-toi !</p>
+          </Link>
         </form>
       </div>
     </>

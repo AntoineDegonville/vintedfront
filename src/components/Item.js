@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Item = ({ data, setData }) => {
+const Item = ({ data }) => {
   return (
     <div className="container_item">
       {data.offers.map((item, index) => {
@@ -19,15 +19,14 @@ const Item = ({ data, setData }) => {
                 {item.owner.account.username}{" "}
               </div>
 
-              <div>
-                <Link to={`/offer/${item._id}`}>
-                  <img
-                    className="picture_item"
-                    src={item.product_pictures[0].secure_url}
-                    alt=""
-                  />
-                </Link>
-              </div>
+              <Link to={`/offer/${item._id}`}>
+                <img
+                  className="picture_item"
+                  src={item.product_pictures[0].secure_url}
+                  alt=""
+                />
+              </Link>
+
               <div className="item_description">
                 <span style={{ paddingBottom: 20, fontWeight: "bold" }}>
                   {item.product_price}€
@@ -36,8 +35,8 @@ const Item = ({ data, setData }) => {
                   {item.product_details.map((item, index) => {
                     return (
                       <>
-                        <p>{item.MARQUE}</p>
                         <p>{item.TAILLE}</p>
+                        <p>{item.MARQUE}</p>
                       </>
                     );
                   })}

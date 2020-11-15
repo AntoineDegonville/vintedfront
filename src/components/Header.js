@@ -18,7 +18,7 @@ const Header = ({ token, setUser }) => {
               type="text"
               name="recherche"
               id="search_bar"
-              placeholder="Recherche..."
+              placeholder="Recherche des articles"
             />
             <FontAwesomeIcon
               className="header_magnifiying"
@@ -28,7 +28,7 @@ const Header = ({ token, setUser }) => {
 
           <div className="header_buttons">
             {token ? (
-              <div>
+              <div className="logout_header_section">
                 <button
                   className="header_logout"
                   onClick={() => {
