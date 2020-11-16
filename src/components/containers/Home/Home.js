@@ -26,15 +26,17 @@ const Home = () => {
     </div>
   ) : (
     <>
-      <div className="hero">
-        <div className="hero_content">
-          <h2>Prêts à faire du tri dans vos placards ?</h2>
-          <button>Commencez à vendre</button>
+      <div className="background_color">
+        <div className="hero">
+          <div className="hero_content">
+            <h2>Prêts à faire du tri dans vos placards ?</h2>
+            <button>Commencez à vendre</button>
+          </div>
+          <div className="hero_bottom_img"></div>
         </div>
-        <div className="hero_bottom_img"></div>
-      </div>
-      <div className="item_section">
-        <Item data={data} setData={setData}></Item>
+        <div className="item_section">
+          <Item data={data} setData={setData}></Item>
+        </div>
       </div>
     </>
   );

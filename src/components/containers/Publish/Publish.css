@@ -1,16 +1,152 @@
+/* body {
+  background-color: #ebedee;
+} */
+
 .publish_container {
   width: 1280px;
-  height: 20px;
   margin: 0 auto;
 }
 .publish_section {
   width: 1280px;
   margin: 0 auto;
-  border: 2px solid black;
+  border: 2px solid rgb(174, 174, 174);
 }
 
 .publish_section_line {
   display: flex;
   justify-content: space-between;
-  border-bottom: black 2px solid;
+  border-bottom: rgb(179, 179, 179) 1px solid;
+}
+
+.publish_file_section {
+  height: 250px;
+  width: 100%;
+  border: 1px solid rgb(169, 169, 169);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.publish_title_section {
+  height: 210px;
+  width: 1280px;
+  border: 1px solid rgb(198, 198, 198);
+}
+
+.publish_title_line {
+  font-size: 20px;
+  width: 100%;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(179, 179, 179);
+  justify-content: space-between;
+}
+.publish_title_line > input {
+  font-size: 16px;
+  margin: 24px;
+  height: 25px;
+  width: 620px;
+  outline: none;
+  border: none;
+  display: flex;
+  border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+.publish_title_line p,
+.publish_textarea_line p {
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.publish_textarea_line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 148px;
+}
+
+.publish_textarea_line > textarea {
+  height: 100px;
+  width: 620px;
+  margin: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+.publish_info_section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 370px;
+  border: 1px solid rgb(198, 198, 198);
+  box-sizing: border-box;
+}
+.publish_info_section .publish_section_line {
+  align-items: center;
+  height: 75px;
+}
+.publish_info_section .publish_section_line p {
+  padding-left: 24px;
+  font-size: 16px;
+}
+.publish_info_section .publish_section_line input {
+  width: 620px;
+  height: 25px;
+  margin-right: 24px;
+  border: none;
+  border-bottom: 1px solid rgb(179, 179, 179);
+  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+}
+
+.publish_price_section {
+  height: 130px;
+  width: 100%;
+  border: solid rgb(179, 179, 179) 1px;
+  margin-top: 20px;
+}
+.publish_price_section p {
+  padding-left: 20px;
+  font-size: 16px;
+}
+.publish_price_section > div {
+  border: none;
+}
+.publish_price_section > .publish_section_line > input {
+  margin-right: 544px;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid rgb(179, 179, 179);
+  outline: none;
+  font-size: 16px;
+}
+
+.publish_price_checkbox {
+  border: 2px solid rebeccapurple;
+  width: 20px;
+}
+
+.publish_container button {
+  height: 43px;
+  width: 77px;
+  background-color: #0ab1ba;
+  color: white;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  margin: 50px 0 50px 0;
+  border-radius: 5px;
+}
+
+.publish_section_line > button {
+  margin-left: 1200px;
+  justify-content: flex-end;
 }

@@ -16,8 +16,9 @@ import {
   faKey,
   faSearch,
   faTimes,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faEnvelope, faKey, faSearch, faTimes);
+library.add(faEnvelope, faKey, faSearch, faTimes, faPlus);
 
 function App() {
   const [data, setData] = useState([{}]);
