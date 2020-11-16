@@ -73,7 +73,7 @@ function App() {
               <Offer></Offer>
             </Route>
 
-            <Route path="/home">
+            <Route path="/">
               <Home></Home>
             </Route>
           </Switch>

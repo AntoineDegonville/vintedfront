@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "/Users/Antoine/LeReacteur/REACT/vintedfront/src/assets/img/logovinted.png";
+import Logo from "../../assets/img/logovinted.png";
 import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Header/Header.css";
