@@ -28,7 +28,7 @@ const Publish = ({ token }) => {
   formData.append("title", title);
   formData.append("description", description);
   formData.append("price", price);
-  formData.append("condition", price);
+  formData.append("condition", condition);
   formData.append("city", city);
   formData.append("brand", brand);
   formData.append("size", size);
