@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../Item/Item.css";
 
 const Item = ({ data }) => {
   return (
@@ -10,21 +11,31 @@ const Item = ({ data }) => {
             <>
               <div className="username_item" key={index}>
                 <span>
-                  <img
-                    className="avatar_item"
-                    src={item.owner.account.avatar.secure_url}
-                    alt=""
-                  />
+                  {item.owner.account.avatar !== undefined && (
+                    <img
+                      className="avatar_item"
+                      src={item.owner.account.avatar.secure_url}
+                      alt="item"
+                    />
+                  )}
                 </span>
-                {item.owner.account.username}{" "}
+                {item.owner.account.username}
               </div>
 
               <Link to={`/offer/${item._id}`}>
-                <img
-                  className="picture_item"
-                  src={item.product_pictures[0].secure_url}
-                  alt=""
-                />
+                {item.product_pictures[0] !== undefined ? (
+                  <img
+                    className="picture_item"
+                    src={item.product_pictures[0].secure_url}
+                    alt="item"
+                  />
+                ) : (
+                  <img
+                    className="picture_item"
+                    src={item.product_image.secure_url}
+                    alt="item"
+                  />
+                )}
               </Link>
 
               <div className="item_description">

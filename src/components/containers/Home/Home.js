@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Item from "../Item";
-import LoaderSpinner from "../LoaderSpinner";
+import Item from "../../Item/Item";
+import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import "../Home/Home.css";
 
 const Home = () => {
   const [data, setData] = useState({});

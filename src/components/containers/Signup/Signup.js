@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Modal from "../Modal";
+import Modal from "/Users/Antoine/LeReacteur/REACT/vintedfront/src/components/Modal/Modal";
 
 const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");

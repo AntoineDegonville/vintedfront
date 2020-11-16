@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import LoaderSpinner from "../LoaderSpinner";
-import { Carousel } from "react-responsive-carousel";
+import LoaderSpinner from "/Users/Antoine/LeReacteur/REACT/vintedfront/src/components/LoaderSpinner/LoaderSpinner";
+import "../Offer/Offer.css";
 
 const Offer = () => {
   const { id } = useParams();
-
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  console.log(data);
 
   useEffect(() => {
     try {
@@ -58,11 +56,13 @@ const Offer = () => {
               </h5>
               <p>{data.product_description}</p>
               <div className="offer_owner">
-                <img
-                  className="offer_avatar"
-                  src={data.owner.account.avatar.secure_url}
-                  alt=""
-                />
+                {data.owner.account.avatar !== undefined && (
+                  <img
+                    className="avatar_item"
+                    src={data.owner.account.avatar.secure_url}
+                    alt="item"
+                  />
+                )}
                 <span>{data.owner.account.username}</span>
               </div>
             </div>

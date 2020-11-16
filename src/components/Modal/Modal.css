@@ -1,0 +1,44 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  visibility: hidden;
+  background-color: white;
+  color: white;
+  font-size: 30px;
+  position: fixed;
+}
+
+.modal_box {
+  display: flex;
+  width: 400px;
+  margin: 300px auto;
+  height: 100px;
+  background-color: white;
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+  border-left: none;
+  position: relative;
+  animation-name: none;
+  animation-duration: 4s;
+}
+
+@keyframes pop {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 400px;
+    opacity: 1;
+  }
+}
+
+.modal_close {
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: red;
+}

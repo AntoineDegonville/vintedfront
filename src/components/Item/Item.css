@@ -1,0 +1,54 @@
+/* /////////////////ITEM SECTION///////////////// */
+
+.item_section {
+  width: 1250px;
+  margin: 20px auto;
+}
+
+/* /////////////////ITEM/////////////////  */
+
+.section_item {
+  width: 240px;
+  margin-right: 10px;
+}
+
+.picture_item {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.container_item {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.avatar_item {
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+  border-radius: 100%;
+  padding-right: 10px;
+}
+
+.username_item {
+  display: flex;
+  color: rgb(177, 177, 177);
+}
+
+.item_description {
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+.item_description > span > p:first-child {
+  color: rgb(177, 177, 177);
+  margin: 0 0 0 0px;
+}
+.item_description > span > p {
+  color: rgb(177, 177, 177);
+  margin: 0 0 0 0px;
+  margin-top: 0px;
+}

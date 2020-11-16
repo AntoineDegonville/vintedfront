@@ -1,4 +1,5 @@
 import Loader from "react-loader-spinner";
+import "../LoaderSpinner/LoaderSpinner.css";
 
 const LoaderSpinner = () => {
   return (

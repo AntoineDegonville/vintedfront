@@ -1,0 +1,43 @@
+/* /////////////////HERO///////////////// */
+
+.hero {
+  background-image: url(/src/assets/img/mainpicture.jpg);
+  background-size: 1600px;
+  background-position: center;
+  width: 100%;
+  height: 457px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 20px;
+}
+.hero_bottom_img {
+  background-image: url("https://www.vinted.fr/assets/seller-promotion/tear-cb30a259a261a54b1511a7088e72118801d10d300901837c655cb53add179620.svg");
+  background-size: 1800px;
+  background-position: center;
+  width: 1700px;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.hero_content {
+  margin: 70px 0px 112px 200px;
+  height: 270px;
+  width: 410px;
+  background-color: white;
+  display: flex;
+  padding-left: 25px;
+  flex-direction: column;
+}
+
+.hero_content > button {
+  width: 188px;
+  height: 45px;
+  background-color: #2baeb7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}

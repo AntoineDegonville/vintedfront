@@ -1,0 +1,114 @@
+/* /////////////////HEADER///////////////// */
+
+header {
+  width: 100%;
+  height: 60px;
+  animation-name: opac;
+  animation-duration: 1s;
+  background-color: white;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.header_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+}
+
+.header_container {
+  width: 1260px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_relative {
+  position: relative;
+}
+
+.header_bar {
+  height: 39px;
+  width: 550px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #f4f4f4;
+  font-size: 16px;
+  line-height: 13.3px;
+  padding-left: 35px;
+}
+
+.header_magnifiying {
+  position: absolute;
+  left: 0px;
+  top: 25%;
+  padding-left: 8px;
+  font-size: 20px;
+  color: rgb(165, 165, 165);
+}
+
+.signuplogin_header_buttons {
+  display: flex;
+  width: 288px;
+  justify-content: space-around;
+}
+.signuplogin_header_buttons button {
+  height: 30px;
+  width: 115px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #2baeb7;
+  background-color: white;
+  color: #2baeb7;
+}
+
+.logout_header_section {
+  display: flex;
+  width: 288px;
+  justify-content: space-around;
+}
+
+.header_logout {
+  height: 30px;
+  width: 115px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: rgb(198, 0, 0);
+  color: white;
+}
+
+.header_sell_button {
+  height: 30px;
+  width: 130px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ffffff;
+  background-color: #2baeb7;
+  color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+}
+
+.logo {
+  height: 30px;
+}
+
+.background {
+  padding-top: 10px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ebedee;
+}

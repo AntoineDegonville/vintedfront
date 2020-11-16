@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
+import "../Modal/Modal.css";
 
 const Modal = ({ username, setHidden }) => {
   const history = useHistory();
