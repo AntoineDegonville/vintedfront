@@ -5,6 +5,7 @@ import Offer from "./components/containers/Offer/Offer";
 import Header from "./components/Header/Header";
 import Signup from "./components/containers/Signup/Signup";
 import Login from "./components/containers/Login/Login";
+import Publish from "./components/containers/Publish/Publish";
 import LoaderSpinner from "../src/components/LoaderSpinner/LoaderSpinner";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -57,6 +58,10 @@ function App() {
           <Switch>
             <Route path="/signup">
               <Signup setUser={setUser}></Signup>
+            </Route>
+
+            <Route path="/publish">
+              <Publish token={token}></Publish>
             </Route>
 
             <Route path="/login">

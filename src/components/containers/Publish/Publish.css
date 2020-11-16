@@ -1,0 +1,16 @@
+.publish_container {
+  width: 1280px;
+  height: 20px;
+  margin: 0 auto;
+}
+.publish_section {
+  width: 1280px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.publish_section_line {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: black 2px solid;
+}
