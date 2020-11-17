@@ -36,8 +36,10 @@ const img = {
   height: "100%",
 };
 
-const DropzoneComponent = (props) => {
+const DropzoneComponent = ({ picture, setPicture }) => {
   const [files, setFiles] = useState([]);
+  console.log(picture);
+
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {

@@ -3,7 +3,7 @@ import axios from "axios";
 import Item from "../../Item/Item";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import "../Home/Home.css";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Home = ({ token }) => {
   const history = useHistory();
@@ -23,7 +23,7 @@ const Home = ({ token }) => {
   }, []);
 
   return isLoading ? (
-    <div className="loader">{/* <LoaderSpinner></LoaderSpinner> */}</div>
+    <div className="loader">{<LoaderSpinner></LoaderSpinner>}</div>
   ) : (
     <>
       <div className="background_color">

@@ -8,10 +8,10 @@ const Item = ({ data }) => {
       <div className="container_item">
         {data.offers.map((item, index) => {
           return (
-            <div className="section_item">
+            <div key={index} className="section_item">
               <>
                 <div className="username_item" key={index}>
-                  <span>
+                  <span key={index}>
                     {item.owner.account.avatar !== undefined && (
                       <img
                         className="avatar_item"
@@ -47,7 +47,7 @@ const Item = ({ data }) => {
                     {item.product_details.map((item, index) => {
                       return (
                         <>
-                          <p>{item.TAILLE}</p>
+                          <p key={index}>{item.TAILLE}</p>
                           <p>{item.MARQUE}</p>
                         </>
                       );

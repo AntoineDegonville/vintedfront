@@ -3,10 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Modal from "../../Modal/Modal";
 import "../Login/Login.css";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Login = ({ setUser }) => {
-  const history = useHistory();
   const location = useLocation();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();

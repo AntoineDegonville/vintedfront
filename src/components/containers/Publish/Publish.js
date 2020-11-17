@@ -6,14 +6,14 @@ import { Redirect } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [picture, setPicture] = useState();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [brand, setBrand] = useState("");
-  const [size, setSize] = useState("");
-  const [color, setColor] = useState("");
-  const [condition, setCondition] = useState("");
-  const [city, setCity] = useState("");
-  const [price, setPrice] = useState("");
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [brand, setBrand] = useState();
+  const [size, setSize] = useState();
+  const [color, setColor] = useState();
+  const [condition, setCondition] = useState();
+  const [city, setCity] = useState();
+  const [price, setPrice] = useState();
 
   const formData = new FormData();
   formData.append("title", title);
@@ -25,6 +25,7 @@ const Publish = ({ token }) => {
   formData.append("size", size);
   formData.append("color", color);
   formData.append("picture", picture);
+  console.log(picture);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +52,16 @@ const Publish = ({ token }) => {
           <div className="publish_container">
             <h2>Vends ton article</h2>
             <div className="publish_file_section">
-              <DropzoneComponents></DropzoneComponents>
+              <div
+                onChange={(e) => {
+                  setPicture(e.target.files[0].path);
+                }}
+              >
+                <DropzoneComponents
+                  picture={picture}
+                  setPicture={setPicture}
+                ></DropzoneComponents>
+              </div>
             </div>
             <div className="publish_title_section">
               <div className="publish_title_line">

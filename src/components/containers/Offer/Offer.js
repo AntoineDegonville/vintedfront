@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import "../Offer/Offer.css";

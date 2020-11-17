@@ -1,11 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../Modal/Modal.css";
 
 const Modal = ({ username, setHidden, frompublish }) => {
   const history = useHistory();
-  const location = useLocation();
 
   return (
     <div className="modal_box">
