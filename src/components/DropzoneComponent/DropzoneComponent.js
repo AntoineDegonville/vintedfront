@@ -71,6 +71,7 @@ const DropzoneComponent = (props) => {
     <section className="container">
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
+
         <div className="dropzone_section">
           <div>
             <FontAwesomeIcon
