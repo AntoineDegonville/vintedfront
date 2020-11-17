@@ -6,6 +6,9 @@ import Header from "./components/Header/Header";
 import Signup from "./components/containers/Signup/Signup";
 import Login from "./components/containers/Login/Login";
 import Publish from "./components/containers/Publish/Publish";
+import Payment from "./components/containers/Payment/Payment";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import LoaderSpinner from "../src/components/LoaderSpinner/LoaderSpinner";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -17,10 +20,12 @@ import {
   faSearch,
   faTimes,
   faPlus,
+  faSmile,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faEnvelope, faKey, faSearch, faTimes, faPlus);
+library.add(faEnvelope, faKey, faSearch, faTimes, faPlus, faSmile);
 
 function App() {
+  const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
   const [data, setData] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(Cookies.get("usertoken") || null);
@@ -56,6 +61,7 @@ function App() {
       <div>
         <Router>
           <Header token={token} setUser={setUser}></Header>
+
           <Switch>
             <Route path="/signup">
               <Signup setUser={setUser}></Signup>
@@ -70,11 +76,17 @@ function App() {
             </Route>
 
             <Route path="/offer/:id">
-              <Offer></Offer>
+              <Offer token={token}></Offer>
+            </Route>
+
+            <Route path="/payment">
+              <Elements stripe={stripePromise}>
+                <Payment></Payment>
+              </Elements>
             </Route>
 
             <Route path="/">
-              <Home></Home>
+              <Home token={token}></Home>
             </Route>
           </Switch>
         </Router>

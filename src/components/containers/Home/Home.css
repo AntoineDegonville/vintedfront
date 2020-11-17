@@ -8,6 +8,17 @@
   align-items: center;
   position: relative;
   padding-top: 20px;
+  opacity: 1;
+  animation-name: op;
+  animation-duration: 1s;
+}
+@keyframes op {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .hero_bottom_img {
   background-image: url("https://www.vinted.fr/assets/seller-promotion/tear-cb30a259a261a54b1511a7088e72118801d10d300901837c655cb53add179620.svg");

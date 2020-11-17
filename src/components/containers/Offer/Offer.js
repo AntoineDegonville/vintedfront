@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
 import "../Offer/Offer.css";
 
-const Offer = () => {
+const Offer = ({ token }) => {
+  const history = useHistory();
   const { id } = useParams();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -42,7 +43,7 @@ const Offer = () => {
               {data.product_details.map((item, index) => {
                 const keys = Object.keys(item);
                 return (
-                  <div className="offer_details_name">
+                  <div key={index} className="offer_details_name">
                     {keys[0]}
                     <div className="offer_details_value">{item[keys[0]]}</div>
                   </div>
@@ -64,6 +65,18 @@ const Offer = () => {
                   />
                 )}
                 <span>{data.owner.account.username}</span>
+              </div>
+              <div className="offer_button">
+                <button
+                  onClick={() => {
+                    history.push(token ? "/payment" : "/login", {
+                      price: data.product_price,
+                      name: data.product_name,
+                    });
+                  }}
+                >
+                  Acheter
+                </button>
               </div>
             </div>
           </div>

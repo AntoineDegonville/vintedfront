@@ -1,0 +1,87 @@
+.payment_container {
+  width: 600px;
+  height: 555px;
+  margin: 50px auto;
+}
+
+.payment_container > ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.payment_container p {
+  padding-left: 24px;
+  color: #999999;
+  font-size: 14px;
+}
+
+.payment_content {
+  height: 90px;
+  padding: 24px;
+  border-bottom: 1px solid #999999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.payment_content > li {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  color: #666666;
+  font-size: 16px;
+}
+
+.payment_content span {
+  justify-content: space-between;
+}
+
+.payment_total_section {
+  padding-top: 44px;
+}
+
+.payment_total_section > li {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment_total_section p {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #999999;
+  font-size: 16px;
+  color: black;
+}
+
+.payment_bar {
+  padding: 24px;
+}
+
+.bar {
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+
+.bar:hover {
+  box-shadow: #9b9b9b 1px 1px;
+}
+
+.payment_bar button {
+  margin-top: 20px;
+  width: 552px;
+  height: 44px;
+  color: white;
+  background-color: #00c06d;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.payment_bar button:hover {
+  background-color: #008e50;
+}

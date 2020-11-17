@@ -1,10 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "../Modal/Modal.css";
 
-const Modal = ({ username, setHidden }) => {
+const Modal = ({ username, setHidden, frompublish }) => {
   const history = useHistory();
+  const location = useLocation();
+
   return (
     <div className="modal_box">
       Bienvenue {username}
@@ -13,7 +15,7 @@ const Modal = ({ username, setHidden }) => {
           style={{ cursor: "pointer" }}
           onClick={() => {
             setHidden(false);
-            history.push("/home");
+            history.push(frompublish.state === undefined ? "/" : "/publish");
           }}
           className="modal_close"
           icon="times"

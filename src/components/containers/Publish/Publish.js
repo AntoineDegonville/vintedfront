@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Publish/Publish.css";
 import axios from "axios";
 import DropzoneComponents from "../../DropzoneComponent/DropzoneComponent";
+import { Redirect } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [picture, setPicture] = useState();
@@ -43,19 +44,13 @@ const Publish = ({ token }) => {
     }
   };
 
-  return (
+  return token ? (
     <>
       <div className="background_color">
         <form onSubmit={handleSubmit}>
           <div className="publish_container">
             <h2>Vends ton article</h2>
             <div className="publish_file_section">
-              {/* <input
-              type="file"
-              onChange={(e) => {
-                setPicture(e.target.files[0]);
-              }}
-            /> */}
               <DropzoneComponents></DropzoneComponents>
             </div>
             <div className="publish_title_section">
@@ -159,6 +154,13 @@ const Publish = ({ token }) => {
         </form>
       </div>
     </>
+  ) : (
+    <Redirect
+      to={{
+        pathname: "/login",
+        state: { fromPublish: true },
+      }}
+    ></Redirect>
   );
 };
 

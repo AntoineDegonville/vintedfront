@@ -78,5 +78,19 @@
   background-color: white;
   width: 405px;
   flex-direction: column;
-  /* border: violet solid 2px; */
+}
+
+.offer_button {
+  margin: 32px auto;
+  width: 320px;
+  height: 36px;
+}
+.offer_button button {
+  height: 100%;
+  width: 100%;
+  background-color: #09b1ba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }

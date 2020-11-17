@@ -2,30 +2,44 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Modal from "../../Modal/Modal";
+import { useLocation, useHistory } from "react-router-dom";
 
 const Signup = ({ setUser }) => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [hidden, setHidden] = useState(false);
-  const [animation, setAnimation] = useState(false);
+  const location = useLocation();
+  const [error, setError] = useState(false);
+
+  console.log(email);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        {
-          username: username,
-          email: email,
-          password: password,
-        }
-      );
-      console.log(response.data);
-      const token = response.data.token;
-      setUser(token);
-    } catch (error) {
-      console.log(error.message);
+
+    if (
+      username !== undefined &&
+      email !== undefined &&
+      password !== undefined
+    ) {
+      try {
+        const response = await axios.post(
+          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+          {
+            username: username,
+            email: email,
+            password: password,
+          }
+        );
+        console.log(response.data);
+        const token = response.data.token;
+        setUser(token);
+        setError(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    } else {
+      setError(true);
     }
   };
 
@@ -36,11 +50,14 @@ const Signup = ({ setUser }) => {
       <div
         style={{
           visibility: hidden ? "visible" : "hidden",
-          animationName: animation ? "pop" : "none",
         }}
         className="modal"
       >
-        <Modal username={username} setHidden={setHidden}></Modal>
+        <Modal
+          username={username}
+          setHidden={setHidden}
+          frompublish={location}
+        ></Modal>
       </div>
       {/* ////////////////////////////////////////////////////////////// */}
       <div className="loginsignup_container">
@@ -86,13 +103,17 @@ const Signup = ({ setUser }) => {
           </p>
           <button
             onClick={() => {
-              setHidden(true);
-              setAnimation(true);
+              setHidden(username === undefined ? false : true);
+              setHidden(email === undefined ? false : true);
+              setHidden(password === undefined ? false : true);
             }}
             type="submit"
           >
             S'inscrire
           </button>
+          <p style={{ color: "red" }}>
+            {error === true ? "Il manque des informations" : ""}
+          </p>
 
           <Link style={{ textDecoration: "none" }} to="/login">
             <p>Tu as déjà un compte ? Connecte-toi!</p>

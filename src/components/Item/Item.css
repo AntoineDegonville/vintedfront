@@ -3,6 +3,17 @@
 .item_section {
   width: 1250px;
   margin: 20px auto;
+  animation-name: op;
+  animation-duration: 1s;
+}
+
+@keyframes op {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* /////////////////ITEM/////////////////  */
