@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Item from "../../Item/Item";
-import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import Item from "../../components/Item/Item";
+import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 import "../Home/Home.css";
 import { useHistory } from "react-router-dom";
 

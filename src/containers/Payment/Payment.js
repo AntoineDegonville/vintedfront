@@ -3,8 +3,9 @@ import "../Payment/Payment.css";
 import { useLocation, useHistory } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
-import "./../../Modal/Modal.css";
+import "./../../components/Modal/Modal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CheckoutForm from "../../components/CheckoutForm/ChekoutForm";
 
 const Paiement = () => {
   const [succeed, setSucceed] = useState(false);
@@ -30,7 +31,7 @@ const Paiement = () => {
         {
           token: stripeToken,
           title: name,
-          amount: price * 100,
+          amount: price,
         }
       );
       console.log(response.data);
@@ -42,23 +43,27 @@ const Paiement = () => {
     }
   };
 
-  return succeed ? (
-    <div className="modal_box">
-      <FontAwesomeIcon icon="smile"></FontAwesomeIcon>
-      Votre achat à bien été éfféctué !
-      <div>
-        <FontAwesomeIcon
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            setHidden(false);
-            history.push("/");
-          }}
-          className="modal_close"
-          icon="times"
-        ></FontAwesomeIcon>
-      </div>
-    </div>
-  ) : (
+  return (
+    //  succeed ? (
+    //   <div className="modal_box">
+    //     <FontAwesomeIcon
+    //       style={{ color: "orange", paddingRight: 10 }}
+    //       icon="smile"
+    //     ></FontAwesomeIcon>
+    //     Votre achat à bien été éfféctué !
+    //     <div>
+    //       <FontAwesomeIcon
+    //         style={{ cursor: "pointer" }}
+    //         onClick={() => {
+    //           setHidden(false);
+    //           history.push("/");
+    //         }}
+    //         className="modal_close"
+    //         icon="times"
+    //       ></FontAwesomeIcon>
+    //     </div>
+    //   </div>
+    // ) : (
     <div>
       <div className="background_color_payment">
         <div className="payment_container">
@@ -88,18 +93,20 @@ const Paiement = () => {
                   <b>{name}</b>. Vous allez payer <b>{total.toFixed(2)}</b> €
                   (frais de protection et frais de port inclus).
                 </p>
-                <form onSubmit={handleSubmit}>
+                <CheckoutForm></CheckoutForm>
+                {/* <form onSubmit={handleSubmit}>
                   <div className="bar">
                     <CardElement></CardElement>
                   </div>
                   <button type="submit">Payer</button>
-                </form>
+                </form> */}
               </div>
             </div>
           </ul>
         </div>
       </div>
     </div>
+    // );
   );
 };
 

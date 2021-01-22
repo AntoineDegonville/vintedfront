@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/containers/Home/Home";
-import Offer from "./components/containers/Offer/Offer";
+import Home from "./containers/Home/Home";
+import Offer from "./containers/Offer/Offer";
 import Header from "./components/Header/Header";
-import Signup from "./components/containers/Signup/Signup";
-import Login from "./components/containers/Login/Login";
-import Publish from "./components/containers/Publish/Publish";
-import Payment from "./components/containers/Payment/Payment";
+import Signup from "./containers/Signup/Signup";
+import Login from "././containers/Login/Login";
+import Publish from "./containers/Publish/Publish";
+import Payment from "./containers/Payment/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import LoaderSpinner from "../src/components/LoaderSpinner/LoaderSpinner";

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
-import LoaderSpinner from "../../LoaderSpinner/LoaderSpinner";
+import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 import "../Offer/Offer.css";
 
 const Offer = ({ token }) => {

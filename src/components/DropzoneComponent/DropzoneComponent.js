@@ -38,7 +38,6 @@ const img = {
 
 const DropzoneComponent = ({ picture, setPicture }) => {
   const [files, setFiles] = useState([]);
-  console.log(picture);
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",

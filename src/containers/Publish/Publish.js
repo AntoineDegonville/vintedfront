@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Publish/Publish.css";
 import axios from "axios";
-import DropzoneComponents from "../../DropzoneComponent/DropzoneComponent";
+import DropzoneComponents from "../../components/DropzoneComponent/DropzoneComponent";
 import { Redirect } from "react-router-dom";
 
 const Publish = ({ token }) => {
