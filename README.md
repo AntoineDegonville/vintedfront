@@ -20,6 +20,12 @@ Online demo : https://vintedclone.netlify.app/home
 - react-dropzone
 - react-loader-spinner
 
+## Languages
+- React
+- JSX
+- HTML
+- CSS
+
 ## Contributing
 
 If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
